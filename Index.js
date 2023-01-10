@@ -10,7 +10,7 @@ app.listen(process.env.PORT); // Recebe solicitações que o deixa online
 
 const Discord = require("discord.js"); //Conexão com a livraria Discord.js
 const client = new Discord.Client(); //Criação de um novo Client
-const config = require("./config.json"); //Pegando o prefixo do bot para respostas de comandos
+const config = require("./help"); //Pegando o prefixo do bot para respostas de comandos
 
 
 client.on('message', message => {
@@ -25,7 +25,7 @@ client.on('message', message => {
     const command = args.shift().toLowerCase();
 
     try {
-        const commandFile = require(`./commands/${command}.js`)
+        const commandFile = require(`./commands/${help}.js`)
         commandFile.run(client, message, args);
     } catch (err) {
     console.error('Erro:' + err);
@@ -33,4 +33,4 @@ client.on('message', message => {
 });
 
 
-client.login(process.env.TOKEN); //Ligando o Bot caso ele consiga acessar o token 
+client.login(MTA2MDY4NTY4NTI4MTAwNTYzMQ.G9NbAX.QQF6gSQMPkdPJWVqLhUFCR0GcmIuxJHVCiTT5c); //Ligando o Bot caso ele consiga acessar o token 
